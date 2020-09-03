@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         lblLanguage.text = "Hello".localized(language: "hi")
+        lblLanguage.text = "Hello".localized(language: "ar")
+
     }
 }
 
