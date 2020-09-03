@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Internationalize
+
+  Created by Enam on 9/3/20.
+  Copyright © 2020 Enam. All rights reserved.
+*/
+"Hello" = "Hello";
+"Good" = "Good";
+"Night" = "Night";
