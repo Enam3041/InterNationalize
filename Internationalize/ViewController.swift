@@ -21,12 +21,19 @@ class ViewController: UIViewController {
 
 //MARK:- Extension for Localize your String
 extension String {
-    func localized(language:String) -> String
+
+    func localized(language:String, comment: String = "") -> String
     {
-        //forResource here you have to add your language code
-        let path = Bundle.main.path(forResource: language, ofType: "lproj")
-        let bundle = Bundle(path: path!)
-        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
+      guard let bundle = Bundle.main.path(forResource: language, ofType: "lproj") else {
+        return NSLocalizedString(self, comment: comment)
+      }
+
+      let langBundle = Bundle(path: bundle)
+      return NSLocalizedString(self, tableName: nil, bundle: langBundle!, comment: comment)
     }
+
+    public func localizedString(comment: String? = nil) -> String {
+         return NSLocalizedString(self, comment: comment ?? "")
+     }
 }
 
